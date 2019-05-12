@@ -1,0 +1,12 @@
+<h2>Edit Category</h2>
+<br>
+	<form method="post" action="/categories/edit/{{category.cat_id}}">
+		<div>
+			<label>Category Name:</label>
+			<input type="text" name="name" value="{{category.name}}">
+		</div>
+		<div>
+			<input type="submit" value="Update Category">
+		</div>
+	</form>
+<br>

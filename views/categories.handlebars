@@ -1,0 +1,46 @@
+<h2 class="heading">Categories List</h2>
+<p> <button class="add-category"><a href="/categories/add">Add Category</a></button></p>
+<table>
+  <thead>
+    <tr>
+      <th width="300">Name</th>
+      <th width="180">Edit</th>
+      <th width="180">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each categories}}
+    <tr>
+      <td>{{name}}</td>
+      <td><a class="button" href="/categories/edit/{{cat_id}}">Edit</a></td>
+      <td><a class="button" href="/categories/delete/{{cat_id}}">Delete</a></td>
+    </tr>
+    {{else}}
+    <br>
+    <p class="empty">No Category Found</p>
+    {{/each}}
+  </tbody>
+</table>
+
+<style>
+  .add-category {
+    text-decoration: none;
+  }
+
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td,
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+</style>

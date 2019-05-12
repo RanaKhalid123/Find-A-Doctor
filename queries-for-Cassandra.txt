@@ -1,0 +1,21 @@
+CREATE KEYSPACE findadoc WITH REPLICATION = {'class':'SimpleStrategy', 'replication_factor': 3};
+C:\Program Files\DataStax-DDC\python\python.exe" "C:\Program Files\DataStax-DDC\apache-cassandra\bin\cqlsh.py
+DESCRIBE KEYSPACES;
+
+DESCRIBE KEYSPACE findadoc;
+
+USE findadoc;
+
+CREATE TABLE doctors(doc_id uuid, full_name text, category text, practice_name text, street_address text, city text, state text, new_patients boolean, graduation_year int, PRIMARY KEY(doc_id, full_name, category, city, state));
+
+CREATE INDEX on doctors(state);
+
+CREATE TABLE categories(cat_id uuid, name text, PRIMARY KEY(cat_id));
+
+INSERT INTO doctors(doc_id, full_name, category, practice_name, street_address, city, state, new_patients, graduation_year) VALUES(now(), 'William K Samson MD','Neurologist','Family Medical', '30 Congress st','Amesbury', 'MA', true, 1997);
+
+INSERT INTO categories(cat_id, name) VALUES(now(),'General');
+
+INSERT INTO categories(cat_id, name) VALUES(now(),'Neurologist');
+
+CREATE INDEX on doctors(category);

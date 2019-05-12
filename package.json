@@ -1,0 +1,22 @@
+{
+  "name": "findadoc",
+  "version": "1.0.0",
+  "description": "Simple Find a doctor app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Khalid Rasool",
+  "license": "ISC",
+  "dependencies": {
+    "express": "*",
+    "express-handlebars": "*",
+    "body-parser": "*",
+    "cookie-parser": "*",
+    "cassandra-driver": "*",
+    "express-messages": "*",
+    "express-session": "*",
+    "connect-flash": "*",
+    "express-validator": "*"
+  }
+}

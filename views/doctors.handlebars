@@ -1,0 +1,23 @@
+<h2 class="heading">Browse Doctors</h2>
+<p> <button class="add-category"><a href="/doctors/add">Add Doctos</a></button></p>
+<br>
+<ul class="docs">
+
+{{#each doctors}}
+	<li>
+		<h3>{{full_name}}</h3>
+		<p>Specialty: {{category}}</p>
+		<p>Location: {{city}} {{state}}</p>
+		<p><a href="/doctors/details/{{doc_id}}">> Details</a></p>
+	</li>
+{{else}}
+  <p class="empty">No Doctor Found</p>
+{{/each}}
+</ul>
+<style>
+	 <style>
+        .add-category{
+            text-decoration: none;
+        }
+    </style>
+</style>
